@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('./assets/fonts/Manrope-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* 1. Dark mode class variant */
+@custom-variant dark (&:is(.dark *));
+
+/* 2. Theme variables replacing tailwind.config.cjs */
+@theme {
+    --color-primary: oklch(51.1% 0.096 186.391);
+    --color-primary-light: #eaf1ff;
+    --color-primary-dark-light: rgba(22, 67, 63, 0.15);
+
+    --color-secondary: #206A63;
+    --color-secondary-light: #fef6ef;
+    --color-secondary-dark-light: rgba(228 144 48 / 15%);
+
+    --color-success: #21B682;
+    --color-success-light: #e7fff1;
+    --color-success-dark-light: rgba(33, 182, 130, 0.15);
+
+    --color-danger: #F14C56;
+    --color-danger-light: #fff6f6;
+    --color-danger-dark-light: rgba(241, 76, 86, 0.15);
+
+    --color-warning: #F9A63A;
+    --color-warning-light: #fff9f1;
+    --color-warning-dark-light: rgba(249, 166, 58, 0.15);
+
+    --color-info: #009BDB;
+    --color-info-light: #eef7fb;
+    --color-info-dark-light: rgba(0, 155, 219, 0.15);
+
+    --color-dark: #3B3F5C;
+    --color-dark-light: #e9e9eb;
+    --color-dark-dark-light: rgba(59, 63, 92, 0.15);
+
+    --color-black: #0e1726;
+    --color-black-light: #e3e4eb;
+    --color-black-dark-light: rgba(14, 23, 38, 0.15);
+
+    --color-white: #ffffff;
+    --color-white-light: #e0e6ed;
+    --color-white-dark: #888ea8;
+
+    --font-sans: "Manrope", sans-serif;
+    --font-nunito: "Nunito", sans-serif;
+    --spacing-4_5: 18px;
+    --shadow-3xl: 0 2px 2px rgb(224 230 237 / 46%), 1px 6px 7px rgb(224 230 237 / 46%);
+}
+
+/* 3. Replaces your custom rotateX plugin */
+@utility rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+/* Buttons */
+.btn {
+    @apply relative flex items-center justify-center rounded-md border px-5 py-2 text-sm font-semibold shadow-[0_10px_20px_-10px] outline-none transition duration-300 hover:shadow-none;
+}
+
+.btn-lg {
+    @apply px-7 py-2.5 text-base;
+}
+
+.btn-sm {
+    @apply px-2.5 py-1.5 text-xs;
+}
+
+.btn[disabled] {
+    @apply cursor-not-allowed opacity-60;
+}
+
+.btn-primary {
+    @apply border-primary bg-primary text-white shadow-primary/60;
+}
+
+.btn-outline-primary {
+    @apply border-primary text-primary shadow-none hover:bg-primary hover:text-white;
+}
+
+.btn-secondary {
+    @apply border-secondary bg-secondary text-white shadow-secondary/60;
+}
+
+.btn-outline-secondary {
+    @apply border-secondary text-secondary shadow-none hover:bg-secondary hover:text-white;
+}
+
+.btn-success {
+    @apply border-success bg-success text-white shadow-success/60;
+}
+
+.btn-outline-success {
+    @apply border-success text-success shadow-none hover:bg-success hover:text-white;
+}
+
+.btn-danger {
+    @apply border-danger bg-danger text-white shadow-danger/60;
+}
+
+.btn-outline-danger {
+    @apply border-danger text-danger shadow-none hover:bg-danger hover:text-white;
+}
+
+.btn-warning {
+    @apply border-warning bg-warning text-white shadow-warning/60;
+}
+
+.btn-outline-warning {
+    @apply border-warning text-warning shadow-none hover:bg-warning hover:text-white;
+}
+
+.btn-info {
+    @apply border-info bg-info text-white shadow-info/60;
+}
+
+.btn-outline-info {
+    @apply border-info text-info shadow-none hover:bg-info hover:text-white;
+}
+
+.btn-dark {
+    @apply border-dark bg-dark text-white shadow-dark/60;
+}
+
+.btn-outline-dark {
+    @apply border-dark text-dark shadow-none hover:bg-dark hover:text-white;
+}
+
+.btn-gradient {
+    @apply bg-gradient-to-r from-[#EF1262] to-[#4361EE] hover:to-[#EF1262] hover:from-[#4361EE] text-white;
+}

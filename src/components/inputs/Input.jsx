@@ -1,0 +1,107 @@
+import React, { useId, useState } from 'react'
+import { PiEyeBold, PiEyeClosed } from "react-icons/pi";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+
+
+const Input = React.forwardRef(({
+    id,
+    label,
+    labelPosition = "",
+    labelcolor = "text-gray-600",
+    labelClassName = "",
+    labelIcon = false,
+    type = 'text',
+    fieldColor = '',
+    className = '',
+    error,
+    required = false,
+    disabled = false,
+    isLoading = false,
+    Icon = false,
+    errorAbsolute = false,
+    ...props
+}, ref) => {
+
+    const _id = id ?? useId();
+    const [isPasswordSeen, setIsPasswordSeen] = useState(false);
+
+
+    return (
+        <div className={`w-full ${labelPosition === "inline" ? "flex items-center justify-between gap-2" : ""} `}>
+            {
+                label && <label
+                    htmlFor={_id}
+                    className={`inline-block mb-1 pl-1 text-sm ${labelcolor} ${labelPosition === "inline" ? "w-1/3" : ""} ${disabled ? "opacity-60" : ""} ${labelClassName}`}
+                >
+                    <span className={`${labelIcon ? "flex items-center gap-1" : ""}`}>
+                        {labelIcon && labelIcon}
+                        {label} {required ? <span className='text-danger'>*</span> : ''}
+                    </span>
+                </label>
+            }
+            <div className="w-full flex flex-col items-start justify-center">
+                <div className={`relative w-full ${fieldColor} `}>
+                    <input
+                        ref={ref}
+                        id={_id}
+                        type={isPasswordSeen ? "text" : type}
+                        className={`
+                            px-3 py-2 text-sm rounded-md  focus:outline-2 outline-blue-500 duration-200 border border-[#b3b3b3c7] w-full 
+                            ${error ? "border-red-500" : ""} 
+                            ${disabled ? "bg-gray-100 text-gray-500 opacity-60" : "bg-white text-black"}
+                            ${Icon ? "ps-10" : ""}
+                            ${props.unit ? "pe-11" : ""}
+                            ${className}
+                        `}
+                        disabled={disabled}
+                        {...props}
+                    />
+                    {
+                        Icon &&
+                        <span className="absolute inset-s-4 top-1/2 -translate-y-1/2">
+                            <Icon size={props.iconSize || 5} className={props.iconClassName} />
+                        </span>
+                    }
+                    {
+                        type === "password" &&
+                        <span
+                            className="absolute inset-e-4 top-1/2 -translate-y-1/2 cursor-pointer"
+                            onClick={() => setIsPasswordSeen(prev => !prev)}
+                        >
+                            {
+                                isPasswordSeen
+                                    ? <PiEyeBold size={22} />
+                                    : <PiEyeClosed size={22} />
+                            }
+                        </span>
+                    }
+                    {
+                        isLoading &&
+                        <span
+                            className="absolute end-4 top-1/2 -translate-y-1/2 cursor-pointer"
+                        >
+                            <AiOutlineLoading3Quarters
+                                className='animate-spin'
+                            />
+                        </span>
+                    }
+                    {props.unit &&
+                        <span className="absolute end-1 rounded-r-md top-1/2 -translate-y-1/2 text-green-500 bg-green-100 px-2 py-1">
+                            {props.unit}
+                        </span>
+                    }
+                    {
+                        errorAbsolute && error && (
+                            <span className="absolute end-1 top-full text-sm mt-1 text-danger whitespace-nowrap z-10 bg-white px-1.5 py-0.5 shadow-sm rounded border border-red-200">
+                                {error}
+                            </span>
+                        )
+                    }
+                </div>
+                {!errorAbsolute && error && <span className='text-danger text-sm whitespace-nowrap'>{error}</span>}
+            </div>
+        </div>
+    )
+})
+
+export default Input
