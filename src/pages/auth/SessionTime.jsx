@@ -1,44 +1,37 @@
 import React, { useState } from 'react';
-import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
-import { LiaIdCardAltSolid } from 'react-icons/lia';
-import { LuSlidersHorizontal, LuUserSearch } from 'react-icons/lu';
-import { Link, useNavigate } from 'react-router';
+import { LuSun, LuMoon } from 'react-icons/lu';
+import { PiSunHorizonLight } from 'react-icons/pi';
 
-export default function ChooseWorkspace() {
-    const navigate = useNavigate();
-
-    //   STATE
-    const [selectedWorkspace, setSelectedWorkspace] = useState('Worker');
+export default function SessionTime() {
+    // STATE
+    const [selectedTime, setSelectedTime] = useState('Afternoon');
 
     const handleContinue = () => {
-        navigate("/auth/session-time");
+        alert(`🎉 Moving forward with the "${selectedTime}" session time preference!`);
     };
 
-    const workspaces = [
+    const sessionOptions = [
         {
-            id: 'Participant',
-            title: 'Participant',
-            desc: 'Engage with programs, track your progress, and manage your personal profile.',
-            icon: LuUserSearch,
+            id: 'Morning',
+            label: 'Morning',
+            icon: LuSun,
             size: 18,
-            color: 'bg-sky-200 text-sky-600 border-sky-100/50'
+            color: 'bg-sky-100 text-sky-500 border-sky-100/50',
         },
         {
-            id: 'Worker',
-            title: 'Worker',
-            desc: 'Manage daily tasks, view assigned caseloads, and collaborate with your team.',
-            icon: LiaIdCardAltSolid,
-            size: 30,
-            color: 'bg-[#B9EBE6] text-primary border-[#A2DFD8]'
+            id: 'Afternoon',
+            label: 'Afternoon',
+            icon: LuSun,
+            size: 18,
+            color: 'bg-[#B9EBE6] text-primary border-[#A2DFD8]',
         },
         {
-            id: 'Admin',
-            title: 'Admin',
-            desc: 'Full system control, user management, and organizational analytics reporting.',
-            icon: LuSlidersHorizontal,
-            size: 18,
-            color: 'bg-purple-200 text-purple-600 border-purple-100/50'
-        }
+            id: 'Evening',
+            label: 'Evening',
+            icon: LuMoon,
+            size: 16,
+            color: 'bg-purple-100 text-purple-500 border-purple-100/50',
+        },
     ];
 
     return (
@@ -60,11 +53,11 @@ export default function ChooseWorkspace() {
 
                         {/* MAIN HEADLINE */}
                         <div className="space-y-4">
-                            <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight uppercase leading-16">
-                                Choose your <br />workspace
+                            <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-snug">
+                                What are your<br />preferred session<br />times?
                             </h1>
                             <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed max-w-sm">
-                                Select the experience that matches how you'll use the platform. Your workspace defines your dashboard, tools, and permissions.
+                                We respect your boundaries. Let us know when you feel most present so we can match you with the right support window.
                             </p>
                         </div>
 
@@ -86,69 +79,53 @@ export default function ChooseWorkspace() {
                     </div>
                 </div>
 
-                {/* RIGHT SELECTION WINDOW */}
+                {/* RIGHT SELECTION PANEL */}
                 <div className="lg:col-span-7 flex flex-col items-center justify-center p-6 sm:p-12 lg:p-16 relative">
 
-                    {/* WORKSPACE CARDS CONTAINER */}
+                    {/* SESSION TIME CARDS CONTAINER */}
                     <div className="w-full max-w-xl bg-white p-2 space-y-4">
 
-                        {workspaces.map((ws) => {
-                            const isSelected = selectedWorkspace === ws.id;
-                            const Icon = ws.icon;
+                        {sessionOptions.map((option) => {
+                            const isSelected = selectedTime === option.id;
+                            const Icon = option.icon;
                             return (
                                 <div
-                                    key={ws.id}
-                                    onClick={() => setSelectedWorkspace(ws.id)}
-                                    className={`w-full rounded-2xl p-5 flex items-start gap-4 transition-all duration-300 cursor-pointer relative border-2 ${isSelected
+                                    key={option.id}
+                                    onClick={() => setSelectedTime(option.id)}
+                                    className={`w-full rounded-2xl px-5 py-4 flex items-center gap-4 transition-all duration-300 cursor-pointer relative border-2 ${isSelected
                                         ? 'border-[#1E5A54] bg-white shadow-md'
-                                        : ' border-slate-100 bg-white hover:border-slate-200 hover:shadow-2xs'
+                                        : 'border-slate-100 bg-white hover:border-slate-200 hover:shadow-2xs'
                                         }`}
                                 >
                                     {/* ICON BOX */}
-                                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center border text-base shadow-3xs ${ws.color}`}>
-                                        <Icon size={ws.size} />
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border text-base shadow-3xs ${option.color}`}>
+                                        <Icon size={option.size} />
                                     </div>
 
-                                    {/* TEXT DESCRIPTION */}
-                                    <div className="flex-1 min-w-0 space-y-1 pr-6">
-                                        <h3 className="text-sm font-black text-slate-900 tracking-tight leading-none">
-                                            {ws.title}
-                                        </h3>
-                                        <p className="text-slate-600 text-xs font-medium leading-relaxed">
-                                            {ws.desc}
-                                        </p>
-                                    </div>
+                                    {/* LABEL */}
+                                    <span className="flex-1 text-sm font-black text-slate-900 tracking-tight">
+                                        {option.label}
+                                    </span>
 
                                     {/* CUSTOM RADIO BUTTON INDICATOR */}
-                                    <div className="absolute right-5 top-1/2 -translate-y-1/2">
-                                        <div className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all ${isSelected ? 'border-[#1E5A54]' : 'border-slate-200'
-                                            }`}>
-                                            {isSelected && (
-                                                <div className="w-2 h-2 bg-[#1E5A54] rounded-full" />
-                                            )}
-                                        </div>
+                                    <div className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all ${isSelected ? 'border-[#1E5A54]' : 'border-slate-300'}`}>
+                                        {isSelected && (
+                                            <div className="w-2 h-2 bg-[#1E5A54] rounded-full" />
+                                        )}
                                     </div>
                                 </div>
                             );
                         })}
 
                         {/* CONTINUE BUTTON */}
-                        <div className="pt-4 space-y-4">
+                        <div className="pt-4">
                             <button
                                 onClick={handleContinue}
                                 className="w-full bg-[#1E5A54] hover:bg-[#16433F] text-white font-bold py-4 rounded-full shadow-md shadow-[#1E5A54]/10 transition-all transform active:scale-[0.99] flex items-center justify-center space-x-2 cursor-pointer text-xs sm:text-sm"
                             >
                                 <span>Continue</span>
-                                <FaArrowRightLong size={18} />
+                                <i className="fa-solid fa-arrow-right text-xs"></i>
                             </button>
-
-                            {/* BACK TO LOGIN LINK */}
-                            <div className="text-center">
-                                <Link to="/auth/sign-in" className="inline-flex items-center space-x-2 text-xs font-bold text-slate-500 hover:text-slate-800 transition-colors">
-                                    <FaArrowLeftLong size={18} />
-                                    <span>Back to login</span>
-                                </Link>
-                            </div>
                         </div>
 
                     </div>

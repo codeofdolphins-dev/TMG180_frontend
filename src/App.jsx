@@ -24,6 +24,10 @@ import ResetPassword from './pages/auth/ResetPassword'
 import CreateAccount from './pages/auth/CreateAccount'
 import AccountDetails from './pages/auth/accountSetup/AccountDetails_step1'
 import ChooseWorkspace from './pages/auth/ChooseWorkspace'
+import SessionTime from './pages/auth/SessionTime'
+import SupportSelection from './pages/auth/SupportSelection'
+import OnboardingComplete from './pages/auth/OnboardingComplete'
+import Compliance from './pages/worker/Compliance'
 
 
 const routes = createBrowserRouter(
@@ -38,6 +42,9 @@ const routes = createBrowserRouter(
         <Route path='create-account' element={<CreateAccount />} />
         <Route path='account-details' element={<AccountDetails />} />
         <Route path='choose-workspace' element={<ChooseWorkspace />} />
+        <Route path='session-time' element={<SessionTime />} />
+        <Route path='support-selection' element={<SupportSelection />} />
+        <Route path='onboarding' element={<OnboardingComplete />} />
       </Route>
 
       <Route path="/" element={<AppLayout />}>
@@ -61,6 +68,7 @@ const routes = createBrowserRouter(
           <Route path="calendar" element={<CalendarPage />} />
           <Route path="participant" element={<Participant />} />
           <Route path="resource" element={<Resource />} />
+          <Route path="compliance" element={<Compliance />} />
           <Route path="learning-hub" element={<LearningHub />} />
           <Route path="settings" element={<WorkerSettings />} />
           <Route path="help-center" element={<HelpCenter />} />
@@ -69,7 +77,8 @@ const routes = createBrowserRouter(
 
       </Route>
 
-      {/* <Route path="test" element={<CreateAccountPage />} /> */}
+      {/* <Route path="test" element={<SupportSelectionPage />} /> */}
+      {/* <Route path="test2" element={<OnboardingCompletePage />} /> */}
 
       <Route path="*" element={<Error404 />} />
     </>
