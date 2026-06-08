@@ -10,7 +10,7 @@ const invoiceStats = [
     { label: "TOTAL", count: "24", meta: "+3 this month", metaColor: "text-teal-600", icon: GrDocumentText, bgColor: "bg-teal-100", iconColor: "text-teal-600", size: 18 },
     { label: "DRAFT", count: "08", meta: "Awaiting completion", metaColor: "text-slate-400", icon: MdOutlineEditNote, bgColor: "bg-slate-100", iconColor: "text-slate-500", size: 25 },
     { label: "SENT", count: "12", meta: "$4,250 pending", metaColor: "text-slate-400", icon: TbMailForward, bgColor: "bg-sky-100", iconColor: "text-sky-600", size: 22 },
-    { label: "OVERDUE", count: "04", meta: "Action required", metaColor: "text-rose-600 font-bold", icon: BsExclamationLg, bgColor: "bg-rose-100", iconColor: "text-rose-800", size: 22 }
+    { label: "OVERDUE", count: "04", meta: "Needs review", metaColor: "text-rose-600 font-bold", icon: BsExclamationLg, bgColor: "bg-rose-100", iconColor: "text-rose-800", size: 22 }
 ];
 
 // Mock data - Invoice table data

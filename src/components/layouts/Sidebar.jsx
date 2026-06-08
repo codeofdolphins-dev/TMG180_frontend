@@ -2,8 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router'
 import { navigationLinks, utilityActions } from './helper'
 
-// const USER_TYPE = "participant"
-const USER_TYPE = "worker"
+const USER_TYPE = "participant"
+// const USER_TYPE = "worker"
 
 const Sidebar = () => {
     return (

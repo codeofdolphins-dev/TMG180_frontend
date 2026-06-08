@@ -2,8 +2,6 @@ import { createBrowserRouter, createRoutesFromElements, Navigate, Route, RouterP
 import AppLayout from './layout/App.layout'
 import Error404 from './pages/Error404'
 import ParticipantDashboard from './pages/participant/ParticipantDashboard'
-import FindWork from './pages/participant/FindWork'
-import SavedWorker from './pages/participant/SavedWorker'
 import Message from './pages/participant/Message'
 import MyRequest from './pages/participant/Myrequest'
 import MyProfile from './pages/participant/MyProfile'
@@ -11,7 +9,6 @@ import Setting from './pages/participant/Setting'
 import Help from './pages/participant/Help'
 import WorkerDashboard from './pages/worker/WorkerDashboard'
 import CalendarPage from './pages/worker/calendar'
-import Participant from './pages/worker/participant'
 import Resource from './pages/worker/Resource'
 import LearningHub from './pages/worker/LearningHub'
 import WorkerSettings from './pages/worker/WorkerSettings'
@@ -28,6 +25,9 @@ import SessionTime from './pages/auth/SessionTime'
 import SupportSelection from './pages/auth/SupportSelection'
 import OnboardingComplete from './pages/auth/OnboardingComplete'
 import Compliance from './pages/worker/Compliance'
+import Favourites from './pages/participant/Favourites'
+import FindSupport from './pages/participant/FindWork'
+import Participant from './pages/worker/Participant'
 
 
 const routes = createBrowserRouter(
@@ -51,12 +51,12 @@ const routes = createBrowserRouter(
         {/* <Route index element={<Navigate to={"/auth/sign-in"} replace />} /> */}
 
 
-        <Route path="participent">
+        <Route path="participant">
           <Route path="dashboard" element={<ParticipantDashboard />} />
-          <Route path="find-worker" element={<FindWork />} />
-          <Route path="saved-worker" element={<SavedWorker />} />
-          <Route path="message" element={<Message />} />
-          <Route path="request" element={<MyRequest />} />
+          <Route path="find-support" element={<FindSupport />} />
+          <Route path="favourites" element={<Favourites />} />
+          {/* <Route path="message" element={<Message />} /> */}
+          {/* <Route path="request" element={<MyRequest />} /> */}
 
           <Route path="profile" element={<MyProfile />} />
           <Route path="setting" element={<Setting />} />

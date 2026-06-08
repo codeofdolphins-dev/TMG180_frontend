@@ -1,4 +1,12 @@
 import React, { useState } from 'react'
+import { FaMoneyBills } from 'react-icons/fa6';
+import { FiUserPlus } from 'react-icons/fi';
+import { GiScrollQuill } from 'react-icons/gi';
+import { IoCloudUploadOutline } from 'react-icons/io5';
+import { LuCalendarCheck } from 'react-icons/lu';
+import { MdEditNote, MdGavel, MdWarningAmber } from 'react-icons/md';
+import { RiShieldCheckLine } from 'react-icons/ri';
+import { TbClipboardSearch, TbTopologyStar3 } from 'react-icons/tb';
 
 
 const scheduleSessions = [
@@ -36,12 +44,12 @@ const scheduleSessions = [
 
 // Quick action button data
 const quickActions = [
-    { label: "Add Participant", icon: "fa-user-plus", color: "bg-teal-50 text-teal-600" },
-    { label: "Continue Intake", icon: "fa-rectangle-list", color: "bg-sky-50 text-sky-600" },
-    { label: "Add Daily Note", icon: "fa-pen-to-square", color: "bg-amber-50 text-amber-600" },
-    { label: "Create Invoice", icon: "fa-file-invoice-dollar", color: "bg-indigo-50 text-indigo-600" },
-    { label: "Upload Compliance", icon: "fa-cloud-arrow-up", color: "bg-rose-50 text-rose-600" },
-    { label: "Learning Hub", icon: "fa-graduation-cap", color: "bg-purple-50 text-purple-600" }
+    { label: "Add Participant", icon: FiUserPlus, color: "bg-teal-50 text-teal-600" },
+    { label: "Continue Intake", icon: GiScrollQuill, color: "bg-sky-50 text-sky-600" },
+    { label: "Add Daily Note", icon: MdEditNote, color: "bg-amber-50 text-amber-600" },
+    { label: "Create Invoice", icon: FaMoneyBills, color: "bg-indigo-50 text-indigo-600" },
+    { label: "Upload Compliance", icon: IoCloudUploadOutline, color: "bg-rose-50 text-rose-600" },
+    { label: "Learning Hub", icon: TbTopologyStar3, color: "bg-purple-50 text-purple-600" }
 ];
 
 
@@ -84,8 +92,8 @@ const WorkerDashboard = () => {
                                 <div className="bg-emerald-400 h-full w-[85%]" />
                             </div>
                         </div>
-                        <button className="bg-white hover:bg-slate-50 text-[#0D443E] font-bold text-xs px-5 py-2.5 rounded-xl shadow-xs transition-colors shrink-0 cursor-pointer">
-                            Complete Setup
+                        <button className="bg-white hover:bg-slate-50 text-emerald-600 font-bold text-xs px-5 py-2.5 rounded-xl shadow-xs transition-colors shrink-0 cursor-pointer">
+                            Continue when you're ready
                         </button>
                     </div>
                 </div>
@@ -170,44 +178,48 @@ const WorkerDashboard = () => {
                 <div className="space-y-4">
                     <h3 className="text-sm font-black text-slate-900 tracking-tight">Quick Actions</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        {quickActions.map((action, idx) => (
-                            <button
-                                key={idx}
-                                className="bg-white border border-slate-100 rounded-2xl p-4 shadow-2xs hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col items-center justify-center text-center space-y-3 cursor-pointer group"
-                            >
-                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-base shadow-3xs group-hover:scale-105 transition-transform ${action.color}`}>
-                                    <i className={`fa-regular ${action.icon}`}></i>
-                                </div>
-                                <span className="text-xs font-bold text-slate-700 tracking-tight group-hover:text-[#1E5A54] transition-colors">{action.label}</span>
-                            </button>
-                        ))}
+                        {quickActions.map((action, idx) => {
+                            const Icon = action.icon;
+
+                            return (
+                                <button
+                                    key={idx}
+                                    className="bg-white border border-slate-100 rounded-2xl p-4 shadow-2xs hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col items-center justify-center text-center space-y-3 cursor-pointer group"
+                                >
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-base shadow-3xs group-hover:scale-105 transition-transform ${action.color}`}>
+                                        <Icon size={26} />
+                                    </div>
+                                    <span className="text-xs font-bold text-slate-700 tracking-tight group-hover:text-[#1E5A54] transition-colors">{action.label}</span>
+                                </button>
+                            )
+                        })}
                     </div>
                 </div>
 
             </div>
 
             {/* Right control sidebar */}
-            <div className="w-80 bg-white border-l border-slate-100 flex flex-col overflow-y-auto p-6 space-y-6 shrink-0 h-full">
+            <div className="w-80 flex flex-col p-6 space-y-6 shrink-0 h-full">
 
                 {/* Compliance alerts widget */}
                 <div className="bg-slate-50/40 border border-slate-100 rounded-2xl p-4 space-y-4 shadow-3xs">
                     <div className="flex items-center space-x-2 text-rose-600 font-bold text-xs uppercase tracking-wider">
-                        <i className="fa-regular fa-triangle-exclamation text-sm"></i>
+                        <MdWarningAmber size={26} />
                         <h4 className="tracking-tight">Compliance Alerts</h4>
                     </div>
 
                     <div className="space-y-2.5 text-xs">
                         {/* Alert 1 */}
-                        <div className="bg-amber-50/50 border border-amber-100/60 rounded-xl p-3 flex items-start space-x-3">
-                            <i className="fa-solid fa-shield-check text-amber-500 text-sm mt-0.5"></i>
+                        <div className="bg-amber-50 border border-amber-100 rounded-full p-4.5 flex items-start space-x-3">
+                            <RiShieldCheckLine size={22} className='text-amber-500' />
                             <div className="space-y-0.5">
                                 <h5 className="font-bold text-amber-900">NDIS Check Renewal</h5>
-                                <p className="text-[11px] text-amber-700/80 font-medium">Due in 12 days • Action Required</p>
+                                <p className="text-[11px] text-amber-700/80 font-medium">Due in 12 days • Needs Review</p>
                             </div>
                         </div>
                         {/* Alert 2 */}
-                        <div className="bg-rose-50/40 border border-rose-100/60 rounded-xl p-3 flex items-start space-x-3">
-                            <i className="fa-solid fa-file-shield text-rose-500 text-sm mt-0.5"></i>
+                        <div className="bg-rose-50 border border-rose-100 rounded-full p-4.5 flex items-start space-x-3">
+                            <MdGavel size={22} className='text-rose-500' />
                             <div className="space-y-0.5">
                                 <h5 className="font-bold text-rose-900">Professional Indemnity</h5>
                                 <p className="text-[11px] text-rose-600 font-medium">Expires Oct 30 • Immediate Attention</p>
@@ -220,15 +232,15 @@ const WorkerDashboard = () => {
                     </button>
                 </div>
 
-                {/* Performance snapshots widget */}
+                {/* Support overview */}
                 <div className="space-y-3.5">
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Performance Snapshots</h4>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Support Overview</h4>
 
                     <div className="space-y-2 text-xs">
                         {/* Metric 1 */}
                         <div className="bg-white border border-slate-100 rounded-xl p-3.5 flex items-center justify-between shadow-3xs">
                             <div className="flex items-center space-x-3">
-                                <div class="bg-teal-50 text-teal-600 p-2 rounded-lg text-sm"><i className="fa-regular fa-calendar-check"></i></div>
+                                <div class="bg-teal-50 text-teal-600 p-2 rounded-lg text-sm"><LuCalendarCheck size={24} /></div>
                                 <div>
                                     <span className="text-slate-400 font-medium block">Total Sessions</span>
                                     <span className="text-base font-black text-slate-900 tracking-tight block mt-0.5">18</span>
@@ -239,7 +251,7 @@ const WorkerDashboard = () => {
                         {/* Metric 2 */}
                         <div className="bg-white border border-slate-100 rounded-xl p-3.5 flex items-center justify-between shadow-3xs">
                             <div className="flex items-center space-x-3">
-                                <div class="bg-amber-50 text-amber-600 p-2 rounded-lg text-sm"><i className="fa-regular fa-file-invoice"></i></div>
+                                <div class="bg-amber-50 text-amber-600 p-2 rounded-lg text-sm"><TbClipboardSearch size={24} /></div>
                                 <div>
                                     <span className="text-slate-400 font-medium block">Pending Notes</span>
                                     <span className="text-base font-black text-slate-900 tracking-tight block mt-0.5">4</span>
@@ -268,11 +280,11 @@ const WorkerDashboard = () => {
                     </div>
                 </div>
 
-                {/* Priority tasks widget */}
+                {/* Coming up */}
                 <div className="bg-white border border-slate-100 rounded-2xl p-4 shadow-xs space-y-4 flex-1 flex flex-col justify-between">
                     <div className="space-y-3.5">
                         <div className="flex items-center justify-between">
-                            <h4 className="text-sm font-black text-slate-900 tracking-tight">Priority Tasks</h4>
+                            <h4 className="text-sm font-black text-slate-900 tracking-tight">Coming Up</h4>
                             <span className="bg-slate-100 text-slate-500 text-[9px] font-extrabold tracking-wider px-2 py-0.5 rounded-sm uppercase">3 New</span>
                         </div>
 

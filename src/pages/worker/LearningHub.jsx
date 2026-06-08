@@ -245,11 +245,11 @@ const LearningHub = () => {
                             </div>
                             <button className="bg-slate-50 hover:bg-slate-100 text-slate-600 font-bold text-[10px] px-3 py-1.5 rounded-lg border border-slate-200/50 cursor-pointer">Read</button>
                         </div>
-                        {/* Item 3 - Action required */}
+                        {/* Item 3 - Needs review */}
                         <div className="flex items-center justify-between pt-1">
                             <div>
                                 <h5 className="font-bold text-slate-800">Incident Reporting</h5>
-                                <span className="text-[9px] text-rose-500 font-black block mt-0.5 uppercase tracking-wide">Action Needed</span>
+                                <span className="text-[9px] text-rose-500 font-black block mt-0.5 uppercase tracking-wide">Needs review</span>
                             </div>
                             <button className="bg-[#1E5A54] hover:bg-secondary text-white font-bold text-[10px] px-3 py-2 rounded-lg shadow-2xs cursor-pointer transition-colors">Acknowledge</button>
                         </div>

@@ -23,24 +23,24 @@ const quickActionsData = [
         primaryColor: "text-[#1A73E8]",
         secondaryColor: "bg-[#E8F0FE]"
     },
-    {
-        Icon: MessageSquare,
-        title: "View Messages",
-        text: "Check for new diagnostic updates from your dedicated team logs.",
-        linkText: "OPEN INBOX",
-        link: "#",
-        primaryColor: "text-[#9333EA]",
-        secondaryColor: "bg-[#F3E8FF]"
-    },
-    {
-        Icon: GitPullRequest,
-        title: "Requests Status",
-        text: "Track the comprehensive progress of your sent applications index.",
-        linkText: "VIEW STATUS",
-        link: "#",
-        primaryColor: "text-[#D97706]",
-        secondaryColor: "bg-[#FEF3C7]"
-    },
+    // {
+    //     Icon: MessageSquare,
+    //     title: "View Messages",
+    //     text: "Check for new diagnostic updates from your dedicated team logs.",
+    //     linkText: "OPEN INBOX",
+    //     link: "#",
+    //     primaryColor: "text-[#9333EA]",
+    //     secondaryColor: "bg-[#F3E8FF]"
+    // },
+    // {
+    //     Icon: GitPullRequest,
+    //     title: "Requests Status",
+    //     text: "Track the comprehensive progress of your sent applications index.",
+    //     linkText: "VIEW STATUS",
+    //     link: "#",
+    //     primaryColor: "text-[#D97706]",
+    //     secondaryColor: "bg-[#FEF3C7]"
+    // },
 ]
 
 const ParticipantDashboard = () => {
@@ -127,14 +127,14 @@ const ParticipantDashboard = () => {
             <section className="space-y-4">
                 <div class="flex justify-between items-center">
                     <h3 className="text-lg font-bold text-slate-800 tracking-tight">Saved Support Workers</h3>
-                    <a href="#view-all" className="text-xs font-bold text-[#206A63] bg-emerald-50 px-3 py-1.5 rounded-lg hover:bg-emerald-100 transition-all">View all saved</a>
+                    <a href="#view-all" className="text-xs font-bold text-primary bg-emerald-50 px-3 py-1.5 rounded-lg hover:bg-emerald-100 transition-all">View all saved</a>
                 </div>
 
                 <div className="grid grid-cols-3 gap-6">
                     {/* Worker Card 1 */}
                     <div className="bg-white border border-slate-100 rounded-3xl p-5 shadow-sm relative group hover:shadow-md transition-all">
                         <button className="absolute top-5 right-5 text-slate-300 hover:text-[#EF4444] transition-all">
-                            <Bookmark size={18} className="fill-current text-[#206A63]" />
+                            <Bookmark size={18} className="fill-current text-primary" />
                         </button>
                         <div className="flex gap-4">
                             <div className="w-14 h-14 rounded-2xl bg-orange-100 overflow-hidden border border-orange-200">

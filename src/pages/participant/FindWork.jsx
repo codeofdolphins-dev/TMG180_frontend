@@ -46,7 +46,7 @@ const initialWorkers = [
 
 // WARNING: card design need to change little bit, the description text is too long and it should be max 2 lines with ellipsis, also the tags should be more compact and smaller font size, and the location and experience should be in a smaller font size as well. The status should be more prominent and the buttons should be more visually appealing with better colors and hover effects.
 
-const FindWork = () => {
+const FindSupport = () => {
     const [activeMenu, setActiveMenu] = useState('Find Workers');
     const [workers, setWorkers] = useState(initialWorkers);
     const [locationFilter, setLocationFilter] = useState('SYDNEY');
@@ -194,4 +194,4 @@ const FindWork = () => {
     )
 }
 
-export default FindWork
+export default FindSupport;

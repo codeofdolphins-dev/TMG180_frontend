@@ -15,11 +15,11 @@ const faqData = [
     question: "How do I contact a worker?",
     answer: "Once you find a suitable worker's profile, you can click on the 'Contact' or 'Message' button to initiate a conversation directly through our secure platform chat system."
   },
-  {
-    id: 3,
-    question: "What happens after sending a request?",
-    answer: "The worker will receive a notification and can review your support requirements. You will be notified instantly under 'My Requests' as soon as they respond or accept your request."
-  },
+  // {
+  //   id: 3,
+  //   question: "What happens after sending a request?",
+  //   answer: "The worker will receive a notification and can review your support requirements. You will be notified instantly under 'My Requests' as soon as they respond or accept your request."
+  // },
   {
     id: 4,
     question: "How do I update my profile?",
@@ -43,13 +43,13 @@ const categoryCards = [
     icon: MdPersonSearch,
     color: "bg-sky-50 text-sky-600 border-sky-100"
   },
-  {
-    id: 3,
-    title: "Managing Requests",
-    desc: "How to handle bookings, shifts, and communication.",
-    icon: BiCalendarCheck,
-    color: "bg-purple-50 text-purple-600 border-purple-100"
-  },
+  // {
+  //   id: 3,
+  //   title: "Managing Requests",
+  //   desc: "How to handle bookings, shifts, and communication.",
+  //   icon: BiCalendarCheck,
+  //   color: "bg-purple-50 text-purple-600 border-purple-100"
+  // },
   {
     id: 4,
     title: "Account & Settings",

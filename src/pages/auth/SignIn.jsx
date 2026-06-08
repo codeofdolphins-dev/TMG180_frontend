@@ -50,11 +50,11 @@ export default function SignIn() {
 
           <div className="max-w-xs space-y-8 relative z-10">
             {/* SUB-TAG CAPSULE */}
-            <div>
+            {/* <div>
               <span className="bg-[#B9EBE6] text-[#134741] text-[10px] font-extrabold px-3 py-1.5 rounded-md uppercase tracking-wider shadow-2xs">
                 The Human Sanctuary
               </span>
-            </div>
+            </div> */}
 
             {/* MAIN HEADLINE */}
             <div className="space-y-3">
@@ -215,7 +215,7 @@ export default function SignIn() {
 
       {/* GLOBAL SYSTEM FOOTER */}
       <footer className="bg-white border-t border-slate-100 h-16 px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-2 shrink-0 text-[11px] font-bold text-slate-400 tracking-wide select-none">
-        <div>&copy; 2026 TMG180. The Human Sanctuary. All rights reserved.</div>
+        <div>&copy; 2026 TMG180. All rights reserved.</div>
         <div className="flex space-x-6">
           <a href="#terms" className="hover:text-slate-600 transition-colors">Terms of Service</a>
           <a href="#privacy-policy" className="hover:text-slate-600 transition-colors">Privacy Policy</a>

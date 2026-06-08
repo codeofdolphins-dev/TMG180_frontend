@@ -62,9 +62,9 @@ const Participant = () => {
                         <i className="fa-solid fa-sliders text-xs"></i>
                         <span>Filters</span>
                     </button>
-                    <button className="bg-[#1E5A54] hover:bg-secondary text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md shadow-[#1E5A54]/10 flex items-center space-x-1.5 transition-all transform active:scale-98 cursor-pointer">
+                    <button className="bg-primary hover:bg-secondary text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-md shadow-primary/10 flex items-center space-x-1.5 transition-all transform active:scale-98 cursor-pointer">
                         <i className="fa-solid fa-plus text-xs"></i>
-                        <span>Add Participant</span>
+                        <span>Add a participant you support</span>
                     </button>
                 </div>
             </div>

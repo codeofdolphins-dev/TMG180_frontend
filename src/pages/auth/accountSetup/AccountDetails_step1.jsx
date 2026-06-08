@@ -86,7 +86,7 @@ export default function AccountDetails() {
 
                     {/* MOTTO QUOTE NOTICE */}
                     <div className="text-sm font-medium text-slate-500 leading-relaxed max-w-sm">
-                        "The Human Sanctuary is a space for growth, connection, and purposeful work."
+                        "The TMG180 is a space for growth, connection, and purposeful work."
                     </div>
                 </div>
 

@@ -10,29 +10,29 @@ export const navigationLinks = {
         {
             name: "Dashboard",
             icon: LayoutDashboard,
-            path: "/participent/dashboard",
+            path: "/participant/dashboard",
         },
         {
-            name: "Find Workers",
+            name: "Find Support",
             icon: MdPersonSearch,
-            path: "/participent/find-worker",
+            path: "/participant/find-support",
         },
         {
-            name: "Saved Workers",
+            name: "Favourites",
             icon: Bookmark,
-            path: "/participent/saved-worker",
+            path: "/participant/favourites",
         },
-        {
-            name: "Messages",
-            icon: GoMail,
-            path: "/participent/message",
-            badgeCount: 0,
-        },
-        {
-            name: "My Requests",
-            icon: LuClipboardList,
-            path: "/participent/request",
-        },
+        // {
+        //     name: "Messages",
+        //     icon: GoMail,
+        //     path: "/participant/message",
+        //     badgeCount: 0,
+        // },
+        // {
+        //     name: "My Requests",
+        //     icon: LuClipboardList,
+        //     path: "/participant/request",
+        // },
     ],
     worker: [
         {
@@ -76,7 +76,6 @@ export const navigationLinks = {
             path: "/worker/settings",
             size: 20
         },
-        // RiSettings2Line
     ],
 };
 
@@ -85,17 +84,17 @@ export const utilityActions = {
         {
             name: "My Profile",
             icon: FaRegUserCircle,
-            path: "/participent/profile",
+            path: "/participant/profile",
         },
         {
             name: "Settings",
             icon: Settings,
-            path: "participent/setting",
+            path: "participant/setting",
         },
         {
             name: "Help Center",
             icon: HelpCircle,
-            path: "/participent/help",
+            path: "/participant/help",
         }
     ],
     worker: [

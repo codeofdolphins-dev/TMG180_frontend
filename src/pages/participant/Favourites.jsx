@@ -48,7 +48,7 @@ const initialSavedWorkers = [
 
 // WARNING: card design need to change little bit, the description text is too long and it should be max 2 lines with ellipsis, also the tags should be more compact and smaller font size, and the location and experience should be in a smaller font size as well. The status should be more prominent and the buttons should be more visually appealing with better colors and hover effects.
 
-const SavedWorker = () => {
+const Favourites = () => {
     const [activeMenu, setActiveMenu] = useState('Saved Workers');
       const [savedWorkers, setSavedWorkers] = useState(initialSavedWorkers);
     
@@ -64,8 +64,8 @@ const SavedWorker = () => {
             {/* Title and Sort Container */}
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div class="space-y-1">
-                    <h1 class="text-3xl font-black text-slate-900 tracking-tight">Saved Workers</h1>
-                    <p class="text-slate-500 text-sm font-light">People you've saved to review and connect with</p>
+                    <h1 class="text-3xl font-black text-slate-900 tracking-tight">Favourites</h1>
+                    <p class="text-slate-500 text-sm font-light">People you have choose.</p>
                 </div>
                 <div class="flex items-center space-x-3 text-sm self-end sm:self-auto">
                     <span class="text-slate-400 font-medium">Sort by</span>
@@ -208,4 +208,4 @@ const SavedWorker = () => {
     )
 }
 
-export default SavedWorker
+export default Favourites

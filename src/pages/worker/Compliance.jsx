@@ -114,7 +114,7 @@ const reminderCard = [
     badgeBgColor: "",
   },
   {
-    shortText: "Action Required",
+    shortText: "Needs review",
     title: "Conflict of Interest",
     text: "Annual disclosure form is ready for signature.",
     textColor: "text-blue-600",
