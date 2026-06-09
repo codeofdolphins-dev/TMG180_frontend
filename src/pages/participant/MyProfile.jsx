@@ -1,4 +1,10 @@
 import React, { useState } from 'react'
+import { BsStars } from 'react-icons/bs';
+import { FaRegEdit } from 'react-icons/fa';
+import { LuBellRing } from 'react-icons/lu';
+import { MdLockOutline, MdOutlineDeleteForever, MdOutlineLogout } from 'react-icons/md';
+import { RiShieldCheckLine } from 'react-icons/ri';
+import ProfileCard from '../../components/participant/myprofile/ProfileCard';
 
 const MyProfile = () => {
     const [notificationToggle, setNotificationToggle] = useState(true);
@@ -8,40 +14,9 @@ const MyProfile = () => {
         <main className="flex-1 overflow-y-auto p-8 lg:p-12 space-y-6">
 
             {/* Profile hero section / top card */}
-            <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex flex-col sm:flex-row items-center gap-6 w-full md:w-auto">
-                    {/* Profile image & camera button */}
-                    <div className="relative w-28 h-28 rounded-full border-4 border-slate-100 shadow-inner shrink-0 bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300" alt="Alex Thompson" className="w-full h-full object-cover rounded-full" />
-                        <button className="absolute bottom-0 right-0 bg-[#1E5A54] text-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-white shadow-md hover:bg-[#16433F] transition-colors cursor-pointer">
-                            <i className="fa-solid fa-camera text-xs"></i>
-                        </button>
-                    </div>
-
-                    {/* Name, email and progress bar */}
-                    <div className="space-y-3 flex-1 w-full sm:w-auto text-center sm:text-left">
-                        <div>
-                            <h2 className="text-2xl font-black text-slate-900 tracking-tight">Alex Thompson</h2>
-                            <p class="text-slate-400 text-sm font-medium mt-0.5">alex.thompson@example.com</p>
-                        </div>
-                        <div className="space-y-1.5 max-w-md mx-auto sm:mx-0">
-                            <div className="flex justify-between text-xs font-bold text-slate-500">
-                                <span className="text-[#1E5A54] uppercase tracking-wider">Profile Completion</span>
-                                <span>70%</span>
-                            </div>
-                            <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                                <div className="bg-[#1E5A54] h-full rounded-full w-[70%]" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Edit profile button */}
-                <button className="bg-[#1E5A54] hover:bg-[#16433F] text-white font-bold text-sm px-6 py-3 rounded-xl shadow-xs flex items-center space-x-2 transition-colors self-center md:self-start cursor-pointer">
-                    <i className="fa-regular fa-pen-to-square"></i>
-                    <span>Edit Profile</span>
-                </button>
-            </div>
+            <ProfileCard
+                profileImage='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300'
+            />
 
             {/* Middle grid layout: 3 columns */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -90,7 +65,7 @@ const MyProfile = () => {
                 </div>
 
                 {/* Column 3: Communication Style */}
-                <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs space-y-5">
+                {/* <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs space-y-5">
                     <h3 className="text-base font-black text-slate-900 tracking-tight">Communication Style</h3>
                     <div className="space-y-3">
                         {[
@@ -106,7 +81,7 @@ const MyProfile = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> */}
 
                 {/* Column 4: Comfort & Boundaries */}
                 <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-xs space-y-4">
@@ -145,7 +120,7 @@ const MyProfile = () => {
                 <div className="bg-purple-50/30 border border-purple-100/60 rounded-3xl p-6 shadow-xs flex flex-col justify-between space-y-4">
                     <div className="space-y-3">
                         <div className="w-10 h-10 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center border border-purple-200/50 shadow-2xs">
-                            <i className="fa-solid fa-sparkles text-sm"></i>
+                            <BsStars size={20} />
                         </div>
                         <div className="space-y-1.5">
                             <h4 className="text-sm font-black text-slate-900 tracking-tight leading-none">Complete Onboarding</h4>
@@ -172,7 +147,7 @@ const MyProfile = () => {
                         {/* Change Password */}
                         <button className="w-full py-4 flex items-center justify-between text-left hover:bg-slate-50/40 px-2 rounded-xl transition-colors cursor-pointer group">
                             <div className="flex items-center space-x-4">
-                                <i className="fa-regular fa-lock text-slate-400 text-lg group-hover:text-slate-600"></i>
+                                <MdLockOutline size={20} />
                                 <div>
                                     <h4 className="text-xs font-bold text-slate-800">Change Password</h4>
                                     <p className="text-[11px] text-slate-400 font-light mt-0.5">Update your account security</p>
@@ -184,7 +159,7 @@ const MyProfile = () => {
                         {/* Privacy & Visibility */}
                         <button className="w-full py-4 flex items-center justify-between text-left hover:bg-slate-50/40 px-2 rounded-xl transition-colors cursor-pointer group">
                             <div className="flex items-center space-x-4">
-                                <i className="fa-regular fa-shield-eye text-slate-400 text-lg group-hover:text-slate-600"></i>
+                                <RiShieldCheckLine size={20} />
                                 <div>
                                     <h4 className="text-xs font-bold text-slate-800">Privacy & Visibility</h4>
                                     <p className="text-[11px] text-slate-400 font-light mt-0.5">Manage who can see your profile</p>
@@ -196,7 +171,7 @@ const MyProfile = () => {
                         {/* Notification Preferences */}
                         <div className="w-full py-4 flex items-center justify-between text-left px-2">
                             <div className="flex items-center space-x-4">
-                                <i className="fa-regular fa-bell text-slate-400 text-lg"></i>
+                                <LuBellRing size={20} />
                                 <div>
                                     <h4 className="text-xs font-bold text-slate-800">Notification Preferences</h4>
                                     <p className="text-[11px] text-slate-400 font-light mt-0.5">Configure email and push alerts</p>
@@ -215,7 +190,7 @@ const MyProfile = () => {
                 </div>
 
                 {/* Safety & Logout */}
-                <div className="lg:col-span-5 bg-slate-100/50 border border-slate-200/50 rounded-3xl p-6 flex flex-col justify-between space-y-6">
+                <div className="lg:col-span-5 bg-slate-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 shadow">
                     <div className="space-y-2">
                         <h3 className="text-base font-black text-slate-900 tracking-tight">Safety & Logout</h3>
                         <p className="text-slate-400 text-xs font-light leading-relaxed">
@@ -223,12 +198,12 @@ const MyProfile = () => {
                         </p>
                     </div>
                     <div className="space-y-4">
-                        <button className="w-full bg-white border border-slate-200/80 hover:border-slate-300 text-slate-700 text-xs font-bold py-3.5 rounded-xl shadow-2xs flex items-center justify-center space-x-2 transition-colors cursor-pointer">
-                            <i className="fa-regular fa-arrow-right-from-bracket text-slate-400"></i>
+                        <button className="w-full bg-white border border-slate-200/80 hover:border-slate-300 text-slate-700 text-sm font-bold py-3.5 rounded-xl shadow-2xs flex items-center justify-center space-x-2 transition-colors cursor-pointer">
+                            <MdOutlineLogout size={24} />
                             <span>Log out from all devices</span>
                         </button>
-                        <button className="w-full text-center text-xs font-bold text-rose-500 hover:text-rose-700 transition-colors py-2 cursor-pointer flex items-center justify-center space-x-2">
-                            <i className="fa-regular fa-square-xmark"></i>
+                        <button className="w-full text-center text-sm font-bold text-orange-800 hover:text-orange-900 transition-colors py-2 cursor-pointer flex items-center justify-center space-x-2">
+                            <MdOutlineDeleteForever size={24} />
                             <span>Delete account</span>
                         </button>
                     </div>

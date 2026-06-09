@@ -5,6 +5,7 @@ import ParticipantDashboard from './pages/participant/ParticipantDashboard'
 import Message from './pages/participant/Message'
 import MyRequest from './pages/participant/Myrequest'
 import MyProfile from './pages/participant/MyProfile'
+import EditProfile from './pages/participant/EditProfile'
 import Setting from './pages/participant/Setting'
 import Help from './pages/participant/Help'
 import WorkerDashboard from './pages/worker/WorkerDashboard'
@@ -59,6 +60,7 @@ const routes = createBrowserRouter(
           {/* <Route path="request" element={<MyRequest />} /> */}
 
           <Route path="profile" element={<MyProfile />} />
+          <Route path="profile/edit-profile" element={<EditProfile />} />
           <Route path="setting" element={<Setting />} />
           <Route path="help" element={<Help />} />
         </Route>
