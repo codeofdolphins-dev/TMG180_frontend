@@ -1,4 +1,4 @@
-import { LayoutDashboard, Bookmark, GitPullRequest, HelpCircle, Settings } from "lucide-react";
+import { LayoutDashboard, Bookmark, GitPullRequest, HelpCircle, Settings, AlertTriangle, FileText, Users } from "lucide-react";
 import { FaRegCalendar, FaRegUserCircle } from "react-icons/fa";
 import { GoMail } from "react-icons/go";
 import { LuClipboardList, LuSettings, LuShieldCheck } from "react-icons/lu";
@@ -77,6 +77,44 @@ export const navigationLinks = {
             size: 20
         },
     ],
+    admin: [
+        {
+            name: "Dashboard",
+            icon: LayoutDashboard,
+            path: "/admin/dashboard",
+            size: 20
+        },
+        {
+            name: "Workers",
+            icon: Users,
+            path: "/admin/workers",
+            size: 20
+        },
+        {
+            name: "Compliance",
+            icon: LuShieldCheck,
+            path: "/admin/compliance",
+            size: 20
+        },
+        {
+            name: "Policies",
+            icon: FileText,
+            path: "/admin/policies",
+            size: 20
+        },
+        {
+            name: "Incidents",
+            icon: AlertTriangle,
+            path: "/admin/incidents",
+            size: 20
+        },
+        {
+            name: "Settings",
+            icon: LuSettings,
+            path: "/admin/settings",
+            size: 20
+        },
+    ],
 };
 
 export const utilityActions = {
@@ -103,6 +141,19 @@ export const utilityActions = {
             name: "Help Center",
             icon: HelpCircle,
             path: "/worker/help-center",
+        },
+        {
+            id: 2,
+            name: "Log Out",
+            icon: MdLogout,
+        },
+    ],
+    admin: [
+        {
+            id: 1,
+            name: "Help Center",
+            icon: HelpCircle,
+            path: "/admin/help-center",
         },
         {
             id: 2,

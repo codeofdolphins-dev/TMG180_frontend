@@ -2,7 +2,8 @@ import React from 'react'
 import { NavLink } from 'react-router'
 import { navigationLinks, utilityActions } from './helper'
 
-const USER_TYPE = "participant"
+const USER_TYPE = "admin"
+// const USER_TYPE = "participant"
 // const USER_TYPE = "worker"
 
 const Sidebar = () => {
@@ -17,7 +18,7 @@ const Sidebar = () => {
                         </div>
                         <div>
                             <h1 className="font-bold text-lg text-[#0F172A] tracking-tight">TMG180</h1>
-                            <p className="text-[10px] text-slate-400 uppercase font-semibold tracking-wider -mt-1">{USER_TYPE} Portal</p>
+                            <p className="text-[10px] text-slate-400 uppercase font-semibold tracking-wider -mt-1">{USER_TYPE === "admin" ? "Admin Console" : `${USER_TYPE} Portal`}</p>
                         </div>
                     </div>
 
@@ -109,6 +110,24 @@ const Sidebar = () => {
                                 </button>
                             );
                         })
+                    )}
+
+                    {/* admin utility Actions */}
+                    {USER_TYPE === "admin" && (
+                        <>
+                            <button className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-full text-sm font-semibold bg-teal-700 text-white hover:bg-teal-800 transition-all cursor-pointer shadow-sm">
+                                <span>New Report</span>
+                            </button>
+                            <div className="flex items-center gap-3 px-2 pt-3 mt-2">
+                                <div className="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-slate-100 shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Admin" className="w-full h-full object-cover" />
+                                </div>
+                                <div>
+                                    <h4 className="text-sm font-bold text-slate-800 leading-tight">Admin User</h4>
+                                    <p className="text-[11px] text-slate-400 font-medium">Super Admin</p>
+                                </div>
+                            </div>
+                        </>
                     )}
                 </div>
             </aside>

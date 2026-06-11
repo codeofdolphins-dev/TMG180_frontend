@@ -29,6 +29,8 @@ import Compliance from './pages/worker/Compliance'
 import Favourites from './pages/participant/Favourites'
 import FindSupport from './pages/participant/FindWork'
 import Participant from './pages/worker/Participant'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import AdminWorker from './pages/admin/AdminWorker'
 
 
 const routes = createBrowserRouter(
@@ -76,6 +78,10 @@ const routes = createBrowserRouter(
           <Route path="help-center" element={<HelpCenter />} />
         </Route>
 
+        <Route path="admin">
+          <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="workers" element={<AdminWorker />} />
+        </Route>
 
       </Route>
 
