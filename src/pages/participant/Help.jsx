@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BiCalendarCheck, BiSupport } from 'react-icons/bi';
 import { MdManageAccounts, MdPersonSearch, MdQuiz, MdRocketLaunch } from 'react-icons/md';
+import { Link } from 'react-router';
 
 
 // mock data - FAQ section
@@ -227,10 +228,10 @@ const Help = () => {
             <p className="text-slate-500 text-xs font-light leading-relaxed">
               If this is an emergency or involves immediate safety concerns, please call our 24/7 hotline directly or contact local emergency services.
             </p>
-            <a href="#emergency-contacts" className="text-xs font-bold text-[#1E5A54] hover:text-[#16433F] flex items-center gap-1.5 pt-1 transition-colors">
+            <Link to="urgent-support" className="text-xs font-bold text-[#1E5A54] hover:text-[#16433F] flex items-center gap-1.5 pt-1 transition-colors">
               <span>View emergency contacts</span>
               <i className="fa-solid fa-arrow-right text-[10px]"></i>
-            </a>
+            </Link>
           </div>
 
         </div>

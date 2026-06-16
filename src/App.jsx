@@ -28,6 +28,8 @@ import OnboardingComplete from './pages/auth/OnboardingComplete'
 import Compliance from './pages/worker/Compliance'
 import Favourites from './pages/participant/Favourites'
 import FindSupport from './pages/participant/FindWork'
+import UrgentSupport from './pages/participant/UrgentSupport'
+import WorkerProfile from './pages/participant/WorkerProfile'
 import Participant from './pages/worker/Participant'
 
 
@@ -55,6 +57,7 @@ const routes = createBrowserRouter(
         <Route path="participant">
           <Route path="dashboard" element={<ParticipantDashboard />} />
           <Route path="find-support" element={<FindSupport />} />
+          <Route path="find-support/:id" element={<WorkerProfile />} />
           <Route path="favourites" element={<Favourites />} />
           {/* <Route path="message" element={<Message />} /> */}
           {/* <Route path="request" element={<MyRequest />} /> */}
@@ -63,6 +66,7 @@ const routes = createBrowserRouter(
           <Route path="profile/edit-profile" element={<EditProfile />} />
           <Route path="setting" element={<Setting />} />
           <Route path="help" element={<Help />} />
+          <Route path="help/urgent-support" element={<UrgentSupport />} />
         </Route>
 
         <Route path="worker">

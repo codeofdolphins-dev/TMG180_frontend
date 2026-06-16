@@ -1,11 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router'
 import { navigationLinks, utilityActions } from './helper'
-
-const USER_TYPE = "participant"
-// const USER_TYPE = "worker"
+import { useSelector } from 'react-redux'
 
 const Sidebar = () => {
+
+    const USER_TYPE = useSelector(state => state.auth.userType);
+
     return (
         <>
             <aside className="w-64 bg-white border-r border-slate-100 flex flex-col justify-between p-6 fixed h-full z-10">

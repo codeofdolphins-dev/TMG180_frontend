@@ -77,6 +77,43 @@ export const navigationLinks = {
             size: 20
         },
     ],
+    admin: [
+        {
+            name: "Dashboard",
+            icon: LayoutDashboard,
+            path: "/admin/dashboard",
+            size: 20
+        },
+        {
+            name: "Workers",
+            icon: FaRegCalendar,
+            path: "/admin/workers",
+            size: 16
+        },
+        {
+            name: "Compliance",
+            icon: MdGroups,
+            path: "/admin/compliance",
+            size: 22
+        },
+        {
+            name: "Policies",
+            icon: RiFileList3Line,
+            path: "/admin/policies"
+        },
+        {
+            name: "Incidents",
+            icon: LuShieldCheck,
+            path: "/admin/incidents",
+            size: 20
+        },
+        {
+            name: "Settings",
+            icon: LuSettings,
+            path: "/worker/settings",
+            size: 20
+        },
+    ],
 };
 
 export const utilityActions = {
@@ -103,6 +140,19 @@ export const utilityActions = {
             name: "Help Center",
             icon: HelpCircle,
             path: "/worker/help-center",
+        },
+        {
+            id: 2,
+            name: "Log Out",
+            icon: MdLogout,
+        },
+    ],
+    admin: [
+        {
+            id: 1,
+            name: "New Report",
+            icon: HelpCircle,
+            path: "/admin/new-report",
         },
         {
             id: 2,
