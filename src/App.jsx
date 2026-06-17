@@ -45,6 +45,8 @@ import AdminCompliance from './pages/admin/AdminCompliance'
 import AdminPolicies from './pages/admin/AdminPolicies'
 import AdminIncidents from './pages/admin/Incidents'
 import AdminSettings from './pages/admin/AdminSettings'
+import AdminAddNewReport from './pages/admin/AdminAddNewReport'
+import AdminProfile from './pages/admin/AdminProfile'
 
 // ── Error ─────────────────────────────────────────────────────────────────────
 import Error404 from './pages/Error404'
@@ -109,12 +111,14 @@ const router = createBrowserRouter(
         {/* ── Admin routes (only userType === "admin") ────────────────────── */}
         <Route element={<ProtectedRoute allowedType="admin" />}>
           <Route path="admin">
+            <Route path="profile" element={<AdminProfile />} />
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="workers" element={<AdminWorker />} />
             <Route path="compliance" element={<AdminCompliance />} />
             <Route path="policies" element={<AdminPolicies />} />
             <Route path="incidents" element={<AdminIncidents />} />
             <Route path="settings" element={<AdminSettings />} />
+            <Route path="new-report" element={<AdminAddNewReport />} />
           </Route>
         </Route>
       </Route>

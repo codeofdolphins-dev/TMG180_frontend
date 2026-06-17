@@ -119,10 +119,21 @@ const Sidebar = () => {
                     {/* admin utility Actions */}
                     {USER_TYPE === "admin" && (
                         <>
-                            <button className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-full text-sm font-semibold bg-teal-700 text-white hover:bg-teal-800 transition-all cursor-pointer shadow-sm">
+                            <NavLink
+                                to="/admin/new-report"
+                                className={({ isActive }) =>
+                                    `w-full flex items-center justify-center gap-2 px-4 py-3 rounded-full text-sm font-semibold text-white transition-all cursor-pointer shadow-sm ${isActive ? 'bg-teal-700 hover:bg-teal-800' : 'bg-sky-400 hover:bg-sky-600'
+                                    }`
+                                }
+                            >
                                 <span>New Report</span>
-                            </button>
-                            <div className="flex items-center gap-3 px-2 pt-3 mt-2">
+                            </NavLink>
+                            <NavLink
+                                to="/admin/profile"
+                                className={({ isActive }) =>
+                                    `flex items-center gap-3 px-2 py-2 mt-2 rounded-full ${isActive && "bg-slate-200"}`
+                                }
+                            >
                                 <div className="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-slate-100 shrink-0">
                                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Admin" className="w-full h-full object-cover" />
                                 </div>
@@ -130,7 +141,7 @@ const Sidebar = () => {
                                     <h4 className="text-sm font-bold text-slate-800 leading-tight">Admin User</h4>
                                     <p className="text-[11px] text-slate-400 font-medium">Super Admin</p>
                                 </div>
-                            </div>
+                            </NavLink>
                         </>
                     )}
                 </div>
