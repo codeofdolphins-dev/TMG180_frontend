@@ -1,8 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router'
+import { useSelector } from 'react-redux'
 import { navigationLinks, utilityActions } from './helper'
 
-const USER_TYPE = "admin"
+// const USER_TYPE = "admin"
 // const USER_TYPE = "participant"
 // const USER_TYPE = "worker"
 

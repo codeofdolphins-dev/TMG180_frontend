@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    status: false,
+    status: true,
     userData: null,
-    // userType: "admin",
+    userType: "admin",
     // userType: "worker",
-    userType: "participant",
+    // userType: "participant",
 };
 
 const authSlice = createSlice({
@@ -15,7 +15,7 @@ const authSlice = createSlice({
         login: (state, action) => {
             state.status = true;
             state.userData = action.payload.userData;
-            state.userType = "";
+            state.userType = action.payload.userType; // e.g. "participant" | "worker" | "admin"
         },
         logout: (state) => {
             state.status = false;

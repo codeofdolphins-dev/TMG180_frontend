@@ -134,31 +134,5 @@ export const utilityActions = {
             icon: HelpCircle,
             path: "/participant/help",
         }
-    ],
-    worker: [
-        {
-            id: 1,
-            name: "Help Center",
-            icon: HelpCircle,
-            path: "/worker/help-center",
-        },
-        {
-            id: 2,
-            name: "Log Out",
-            icon: MdLogout,
-        },
-    ],
-    admin: [
-        {
-            id: 1,
-            name: "Help Center",
-            icon: HelpCircle,
-            path: "/admin/help-center",
-        },
-        {
-            id: 2,
-            name: "Log Out",
-            icon: MdLogout,
-        },
-    ],
-};
+    ]
+}

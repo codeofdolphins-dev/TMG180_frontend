@@ -1,18 +1,9 @@
-import React, { useEffect } from 'react'
-import { Outlet, useNavigate } from "react-router";
+import React from 'react'
+import { Outlet } from "react-router";
 import Sidebar from '../components/layouts/Sidebar';
 import TopNavbar from '../components/layouts/TopNavbar';
 
-const USER_TYPE = "participant"
-
 const AppLayout = () => {
-    const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     if (USER_TYPE === "participant") navigate("/participent/dashboard", { replace: true });
-    // }, [USER_TYPE])
-
-
     return (
         <div className="flex min-h-screen bg-[#F8FAFC] text-[#2C3E50] font-sans">
             {/* sidebar */}
