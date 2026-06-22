@@ -5,6 +5,9 @@ import { MdGroups } from 'react-icons/md'
 import { RiLoader3Line } from 'react-icons/ri'
 import { FiMessageSquare } from 'react-icons/fi'
 import { TbClipboardCopy } from 'react-icons/tb'
+import { FaCheckCircle } from 'react-icons/fa'
+import { HiOutlineLightningBolt } from 'react-icons/hi'
+import { IoCheckmark } from 'react-icons/io5'
 
 
 
@@ -45,7 +48,51 @@ const quickActionsData = [
     //     primaryColor: "text-[#D97706]",
     //     secondaryColor: "bg-[#FEF3C7]"
     // },
-]
+];
+
+const quickSummaryData = [
+    {
+        title: "60% Progress",
+        titleColor: "text-primary",
+        icon: RiLoader3Line,
+        iconColor: "text-primary",
+    },
+    {
+        title: "3 New Messages",
+        titleColor: "text-blue-800",
+        icon: FiMessageSquare,
+        iconColor: "text-blue-500",
+    },
+    {
+        title: "1 Active Request",
+        titleColor: "text-amber-800",
+        icon: TbClipboardCopy,
+        iconColor: "text-amber-500",
+    }
+];
+
+const onboardingMilestoneData = [
+    {
+        title: "Profile Basics",
+        status: "completed",
+        description: "Basic profile information completed",
+    },
+    {
+        title: "Documents",
+        status: "completed",
+        description: "Required documents submitted",
+    },
+    {
+        title: "Preferences",
+        status: "active",
+        description: "Current milestone - Preferences",
+    },
+    {
+        title: "Final Review",
+        status: "pending",
+        description: "Upcoming milestone - Final Review",
+    },
+];
 
 const ParticipantDashboard = () => {
     return (
@@ -60,18 +107,16 @@ const ParticipantDashboard = () => {
 
                     {/* Quick Summary Pill Badges */}
                     <div className="flex flex-wrap gap-3 mt-6">
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow text-primary font-semibold">
-                            <RiLoader3Line size={24} />
-                            <span>60% Progress</span>
-                        </div>
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow text-blue-800 font-semibold">
-                            <FiMessageSquare size={24} className='text-blue-500'/>
-                            <span>3 New Messages</span>
-                        </div>
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow text-amber-800 font-semibold">
-                            <TbClipboardCopy size={24} className='text-amber-500' />
-                            <span>1 Active Request</span>
-                        </div>
+                        {quickSummaryData.map((summary, index) => {
+                            const Icon = summary.icon;
+                            return <div
+                                key={index}
+                                className={`flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow font-semibold ${summary.titleColor}`}
+                            >
+                                <Icon size={24} className={`${summary.iconColor}`} />
+                                <span>{summary.title}</span>
+                            </div>
+                        })}
                     </div>
                 </div>
                 {/* Minimal abstract circles design matching background */}
@@ -82,7 +127,7 @@ const ParticipantDashboard = () => {
             <section className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm">
                 <div className="flex justify-between items-start mb-4">
                     <div>
-                        <span className="text-[10px] text-[#2563EB] font-bold tracking-wider uppercase">Onboarding Journey</span>
+                        <span className="text-[10px] text-primary font-bold tracking-wider uppercase">Onboarding Journey</span>
                         <h3 className="text-base font-bold text-slate-800 mt-1">Current Milestone</h3>
                     </div>
                     <span className="text-xs text-slate-400 font-medium">Estimated completion: 15 mins</span>
@@ -90,27 +135,38 @@ const ParticipantDashboard = () => {
 
                 {/* Linear Timeline bar component */}
                 <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden mb-6">
-                    <div className="bg-[#10B981] h-full w-[70%] rounded-full"></div>
+                    <div className="bg-[#10B981] h-full w-[75%] rounded-full"></div>
                 </div>
 
                 {/* Stepper Status Nodes Grid */}
                 <div className="grid grid-cols-4 gap-4">
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-100">
-                        <CheckCircle2 size={16} className="text-[#10B981]" />
-                        <span>Profile Basics</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-100">
-                        <CheckCircle2 size={16} className="text-[#10B981]" />
-                        <span>Documents</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 bg-[#EFF6FF] p-3 rounded-xl border border-[#BFDBFE]">
-                        <Clock size={16} className="text-[#2563EB]" />
-                        <span>Preferences</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 bg-white p-3 rounded-xl border border-slate-100 opacity-60">
-                        <Circle size={16} />
-                        <span>Final Review</span>
-                    </div>
+                    {onboardingMilestoneData.map((Step, idx) => {
+                        const status = Step.status;
+                        return <div
+                            key={idx}
+                            className={`flex items-center gap-2 text-sm font-semibold p-3 ${status === "completed" ? "text-primary" : status === "active" ? "text-black" : "text-slate-300"}`}
+                        >
+                            {status === "completed"
+                                ? <>
+                                    <div className="w-8 h-8 flex items-center justify-center rounded-full bg-teal-200">
+                                        <IoCheckmark size={18} />
+                                    </div>
+                                </>
+                                : status === "active"
+                                    ? <>
+                                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary">
+                                            <HiOutlineLightningBolt size={18} className='text-white' />
+                                        </div>
+                                    </>
+                                    : <>
+                                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-200 text-slate-300 text-sm font-semibold">
+                                            <span>{`0${idx + 1}`}</span>
+                                        </div>
+                                    </>
+                            }
+                            <span>{Step.title}</span>
+                        </div>
+                    })}
                 </div>
             </section>
 
