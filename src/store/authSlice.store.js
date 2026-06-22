@@ -3,9 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     status: true,
     userData: null,
-    userType: "admin",
+    // userType: "admin",
     // userType: "worker",
-    // userType: "participant",
+    userType: "participant",
 };
 
 const authSlice = createSlice({

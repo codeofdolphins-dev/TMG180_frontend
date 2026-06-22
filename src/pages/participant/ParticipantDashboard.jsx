@@ -1,6 +1,10 @@
 import { ArrowUpRight, Bookmark, CheckCircle2, ChevronDown, Circle, Clock, GitPullRequest, HelpCircle, MessageSquare, Settings, UserCheck, Users } from 'lucide-react'
 import React from 'react'
 import QuickActionCard from '../../components/participant/dashboard/QuickAction.card'
+import { MdGroups } from 'react-icons/md'
+import { RiLoader3Line } from 'react-icons/ri'
+import { FiMessageSquare } from 'react-icons/fi'
+import { TbClipboardCopy } from 'react-icons/tb'
 
 
 
@@ -45,33 +49,33 @@ const quickActionsData = [
 
 const ParticipantDashboard = () => {
     return (
-        <main className="p-8 space-y-8 max-w-7xl mx-auto">
+        <main className="p-8 space-y-8 mx-auto">
 
             {/* Welcome Banner Block */}
-            <section className=" from-[#EBFDF9] to-[#F1FDFB] rounded-3xl p-8 border border-[#D1FAE5] relative overflow-hidden">
-                <div className="max-w-xl relative z-10">
+            <section className="bg-white shadow rounded-3xl p-8 relative overflow-hidden">
+                <div className="relative z-10">
                     <span className="text-[10px] bg-[#34D399]/20 text-[#065F46] font-bold tracking-wider uppercase px-3 py-1 rounded-full">Dashboard Overview</span>
-                    <h2 className="text-3xl font-extrabold text-[#111827] mt-3 mb-2">Welcome back, <span className="text-[#206A63]">Alex.</span></h2>
+                    <h2 className="text-3xl font-extrabold text-[#111827] mt-3 mb-2">Welcome back, <span className="text-primary">Alex.</span></h2>
                     <p className="text-sm text-slate-500 leading-relaxed">Let's continue your support journey. We've updated your matches and request statuses based on your recent activity.</p>
 
                     {/* Quick Summary Pill Badges */}
                     <div className="flex flex-wrap gap-3 mt-6">
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-xs font-semibold text-slate-700">
-                            <span className="w-2 h-2 rounded-full bg-[#10B981]"></span>
+                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow text-primary font-semibold">
+                            <RiLoader3Line size={24} />
                             <span>60% Progress</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-xs font-semibold text-slate-700">
-                            <span className="w-2 h-2 rounded-full bg-[#3B82F6]"></span>
+                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow text-blue-800 font-semibold">
+                            <FiMessageSquare size={24} className='text-blue-500'/>
                             <span>3 New Messages</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-100 shadow-sm text-xs font-semibold text-slate-700">
-                            <span className="w-2 h-2 rounded-full bg-[#F59E0B]"></span>
+                        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow text-amber-800 font-semibold">
+                            <TbClipboardCopy size={24} className='text-amber-500' />
                             <span>1 Active Request</span>
                         </div>
                     </div>
                 </div>
                 {/* Minimal abstract circles design matching background */}
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-64 h-64 bg-[#34D399]/5 rounded-full -mr-16 pointer-events-none"></div>
+                <MdGroups size={400} className="absolute right-0 -bottom-32 text-slate-100 pointer-events-none z-0" />
             </section>
 
             {/* Onboarding Milestone Progress Card */}
@@ -79,7 +83,7 @@ const ParticipantDashboard = () => {
                 <div className="flex justify-between items-start mb-4">
                     <div>
                         <span className="text-[10px] text-[#2563EB] font-bold tracking-wider uppercase">Onboarding Journey</span>
-                        <h3 class="text-base font-bold text-slate-800 mt-1">Current Milestone</h3>
+                        <h3 className="text-base font-bold text-slate-800 mt-1">Current Milestone</h3>
                     </div>
                     <span className="text-xs text-slate-400 font-medium">Estimated completion: 15 mins</span>
                 </div>
@@ -125,7 +129,7 @@ const ParticipantDashboard = () => {
 
             {/* Saved Workers Cards Array Grid Layout */}
             <section className="space-y-4">
-                <div class="flex justify-between items-center">
+                <div className="flex justify-between items-center">
                     <h3 className="text-lg font-bold text-slate-800 tracking-tight">Saved Support Workers</h3>
                     <a href="#view-all" className="text-xs font-bold text-primary bg-emerald-50 px-3 py-1.5 rounded-lg hover:bg-emerald-100 transition-all">View all saved</a>
                 </div>
@@ -155,7 +159,7 @@ const ParticipantDashboard = () => {
                     {/* Worker Card 2 */}
                     <div className="bg-white border border-slate-100 rounded-3xl p-5 shadow-sm relative group hover:shadow-md transition-all">
                         <button className="absolute top-5 right-5 text-slate-300 hover:text-[#EF4444] transition-all">
-                            <Bookmark size={18} className="fill-current text-[#206A63]" />
+                            <Bookmark size={18} className="fill-current text-secondary" />
                         </button>
                         <div className="flex gap-4">
                             <div className="w-14 h-14 rounded-2xl bg-emerald-100 overflow-hidden border border-emerald-200">
@@ -176,7 +180,7 @@ const ParticipantDashboard = () => {
                     {/* Worker Card 3 */}
                     <div className="bg-white border border-slate-100 rounded-3xl p-5 shadow-sm relative group hover:shadow-md transition-all">
                         <button className="absolute top-5 right-5 text-slate-300 hover:text-[#EF4444] transition-all">
-                            <Bookmark size={18} className="fill-current text-[#206A63]" />
+                            <Bookmark size={18} className="fill-current text-secondary" />
                         </button>
                         <div className="flex gap-4">
                             <div className="w-14 h-14 rounded-2xl bg-blue-100 overflow-hidden border border-blue-200">
